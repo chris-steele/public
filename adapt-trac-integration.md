@@ -18,17 +18,17 @@ The following instructions describe how to configure both the Adapt module and t
 
 Client sites use a Moodle plugin that has been developed to support the Adapt/Trac integration. When you are ready to deploy an Adapt module, open the appropriate client site and create a new course if one is not present (`Site Administration > Courses > Add/edit courses`). To avoid ambiguity _course_ shall refer to the location on Moodle where Adapt content is placed. Reference to each individual piece of Adapt content shall continue to use _module_. Keep in mind that there may be multiple Adapt modules in a course (e.g. `m05`, `m10` etc.).
 
-## 2.1 Adapt configuration 
+### 2.1 Adapt configuration 
 
 Some small changes are required in the Adapt configuration (`course.json` and `config.json`). Note that these changes are required for each Adapt module. 
 
-### 2.1.1 course.json 
+#### 2.1.1 course.json 
 
 In `course.json` create a `_trac` configuration by using the exemplar found in `example.json`. Alternatively, if you are using the AAT, install and enable the `adapt-trac` plugin for the module and then go to the `Trac` extension settings within `Project settings`.
 
 Ensure that the `_id` property corresponds to a Trac component name (see [2.2.2 Add Components](#222-add-components)). For example; module should have an `_id` of `m05` and there should be a component named `m05` configured in Trac.
 
-### 2.1.2 config.json 
+#### 2.1.2 config.json 
 
 In `config.json` locate the `_scrollingContainer` property group and set `_isEnabled` to `true` and `_limitToSelector` to `.no-touch`. Alternatively, if you are using the AAT, locate the `iFrame and Screen Reader scrolling support` settings within `Configuration settings` and check the `Enabled?` input. Set the value of `Limit to selector` to `.no-touch`.
 
@@ -97,7 +97,7 @@ Make a note of the report URL. This URL will be used to configure the `Trac Repo
 _instructions for legacy deployment_
 Within the plugin configuration locate the key `_tracPathReport` and change `report/9` to `report/X`; where `X` is the correct index of the report.
 
-### 2.2.5 Permissions
+#### 2.2.5 Permissions
 
 Via the Trac web interface go to `Admin > Permissions` and using the `Grant Permission` form add the following if it does not yet exist: 
 ```
@@ -117,7 +117,7 @@ Once you have configured the Trac instance that the course will use open the con
 - `Trac Report URI` the URL described in [2.2.4 Check the report URL](#224-check-the-report-url)
 - `Trac Environment Path` the full file system path to the Trac instance (e.g. `/var/www/vhosts/dev.kineo.com/TRAC_INSTANCES/csdev`)
 
-### 3 Misc notes
+## 3 Misc notes
 
 Early versions of the plugin used a separate file to store configuration data; `trac.json`. This is not suitable for deployment on AAT instances and so the configuration has been moved to `course.json`.
 
