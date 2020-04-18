@@ -4,7 +4,15 @@ The `adapt-trac` plugin provides an Adapt module with an integrated [Trac](https
 
 The plugin can be used both in standalone [Adapt Framework](https://github.com/adaptlearning/adapt_framework) builds and [Adapt Authoring Tool](https://github.com/adaptlearning/adapt_authoring) (AAT) instances.
 
-## Configuration
+## 1 Requirements
+
+The plugin has been tested in the following environments:
+ - Adapt v5.0.0 and v5.1.0
+ - Trac 1.0.19
+
+The plugin expects the Adapt _scrolling container_ feature to be enabled (see [2.1.2 config.json](#212-config-json)) for proper inline rendering of both the Adapt content and the Trac interface.
+
+## 2 Configuration
 
 The following instructions describe how to configure both the Adapt module and the Trac instance to use the plugin. Further instructions cover deployment which falls into two categories: deployment from a client site (`clients.kineo.com/[client]`) or from other platforms such as the subversion server (`dev.kineo.com`) or an AAT instance.
 
